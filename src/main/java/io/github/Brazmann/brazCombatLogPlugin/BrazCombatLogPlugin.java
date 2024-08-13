@@ -22,29 +22,6 @@ public final class BrazCombatLogPlugin extends JavaPlugin {
         config = getConfig();
         getServer().getPluginManager().registerEvents(new BrazListener(), this);
         CombatManager.Initialize();
-        /*manager.registerEventHandler(LifecycleEvents.COMMANDS, event -> {
-            final Commands commands = event.registrar();
-            commands.register(
-                    Commands.literal("city-gold")
-                            .executes(ctx -> {
-                                ctx.getSource().getSender().sendPlainMessage("City of Gold!");
-                                Entity executor = ctx.getSource().getExecutor();
-                                var bruh = SphereAround(executor.getLocation(), 40);
-                                int affectedCount = 0;
-                                for(Block b : bruh){
-                                    if(b.getType() != Material.AIR){
-                                        b.setType(Material.GOLD_BLOCK);
-                                        affectedCount++;
-                                    }
-                                }
-                                ctx.getSource().getSender().sendPlainMessage("affected " + affectedCount + " blocks!");
-                                return com.mojang.brigadier.Command.SINGLE_SUCCESS;
-                            })
-                            .build(),
-                    "some bukkit help description string",
-                    List.of("an-alias")
-            );
-        });*/
     }
 
     @Override
